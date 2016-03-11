@@ -1,14 +1,17 @@
 ul.menu {
 	margin: 0;
-	padding: 0;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+	padding-left: 4.6rem;
+	padding-right: 1rem;
+	border: 3px solid $darkGrey;
+	float: right;
 	li {
 		display: inline;
-		margin-right: 10px;
 		a {
-			color: #333;
-			padding: 10px;
-			background: #333;
-			color: white;
+			padding: 0 1rem;
+			color: $darkGrey;
+			text-transform: lowercase;
 		}
 	}
 }

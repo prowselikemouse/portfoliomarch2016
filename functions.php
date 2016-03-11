@@ -22,7 +22,8 @@ function theme_setup() {
 	* You can allow clients to create multiple menus by
   * adding additional menus to the array. */
 	register_nav_menus( array(
-		'primary' => 'Primary Navigation'
+		'primary' => 'Primary Navigation',
+		'social' => 'Social Navigation'
 	) );
 
 	/*
@@ -283,4 +284,10 @@ function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';
   return $mimes;
 }
+
 add_filter('upload_mimes', 'cc_mime_types');
+
+function get_featured_image_url($post){
+	$image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
+	return $image[0];
+}

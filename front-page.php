@@ -5,31 +5,102 @@
   <div class="container">
 
     <div class="content">
-  		
-    		<a id="home"></a>
-    		<a id="about"></a>
-    		<div id="portfolio">
-    			<?php $portfolioQuery = new WP_Query(array(
-    					'post_type' => 'portfolio'
-	    			));?>
-	    			<?php if($portfolioQuery -> have_posts() ) ?>
-	    			<?php while ($portfolioQuery -> have_posts() ): ?>
-	    			<?php $portfolioQuery -> the_post(); ?>
-	    				<div class="portfolioPiece">
-	    					<?php while(has_sub_field('portfolio_piece')) ?>
-	    						<h4 class="pieceType"><?php the_sub_field('piece_type'); ?></h4>
-	    						<h6 class="pieceTitle"><?php the_sub_field('piece_title'); ?></h6>
-	    						<p class="pieceBuiltWith"><?php the_sub_field('piece_built_with'); ?></p>
-	    						<p class="pieceDescription"><?php the_sub_field('piece_description'); ?></p>
-	    						<p class="pieceViewLiveButton"><?php the_sub_field('piece_view_live_button'); ?></p>
-	    				</div>
-					<?php endwhile; ?>
-    			
-    		</div>
+		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+		<div id="about">
+			<?php if (has_post_thumbnail( $post->ID ) ): ?>
+			  <?php $backgroundimage = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+			  <?php endif; ?>
+			<div class="headerBox">
+				<img src="<?php echo $backgroundimage[0]; ?>" alt="">
+			</div> <!-- end headerBox -->
+				<div class="aboutBox">
+					<div class="aboutContentBox">
+						<h3 class="myName"><?php the_title(); ?></h3>
+						<p class="myProfession"><?php the_field('about_subtitle'); ?></p>
+						<p class="aboutMe"><?php the_content(); ?></p>
+					</div>
+				</div> <!-- end aboutBox -->
+			</div> <!-- end about -->
 
-    		<a id="resume"></a>
-    		<a id="workflow"></a>
-    		<a id="contact"></a>
+		<div id="services">
+			<h2 class="servicesSectionTitle"><?php the_field('service_section_title'); ?></h2>
+			<?php while( has_sub_field('individual_service')): ?>
+				<div class="individualService">
+					<?php $image = get_sub_field('service_icon') ?>
+					<div class= "serviceIconBox"><img src="<?php echo $image['sizes']['thumbnail']; ?>" alt=""></div>
+					<h4><?php the_sub_field('service_title'); ?></h4>
+					<div class="servicesModal">
+						<?php $image = get_sub_field('service_modal_icon') ?>
+						<div><img src="<?php echo $image['sizes']['thumbnail']; ?>" alt=""></div>
+						<h4><?php the_sub_field('service_modal_title'); ?></h4>
+						<p><?php the_sub_field('service_modal_text'); ?></p>
+					</div>
+				</div>
+			<?php endwhile; ?>
+		</div> <!-- end services -->
+
+		<div id="portfolio">
+			<h2><?php the_field('portfolio_section_title'); ?></h2>
+			<?php $portfolioQuery = new WP_Query(array(
+					'post_type' => 'portfolio'
+				));?>
+				<?php if($portfolioQuery -> have_posts() ): ?>
+				<?php while ($portfolioQuery -> have_posts() ): ?>
+				<?php $portfolioQuery -> the_post(); ?>
+					<div class="portfolioPiece">
+						
+							<div class="portfolioPieceText">
+								<h4 class="pieceType"><?php the_field('piece_type'); ?></h4>
+								<p class="pieceTitle"><?php the_title(); ?></p>
+								<p class="pieceBuiltWith"><?php the_field('piece_built_with'); ?></p>
+								<p class="pieceDescription"><?php the_content(); ?></p>
+								<p class="pieceViewLiveButton"><?php the_field('piece_view_live_button'); ?></p>
+							</div>
+							<div class="portfolioImageBox">
+								<?php $imageUrl = get_featured_image_url($post);?> 
+								<img src="<?php echo $imageUrl ?>" alt="">
+							</div>
+					</div>
+				<?php endwhile; ?>
+			<?php endif; ?>
+			<?php wp_reset_postdata(); ?>
+			
+		</div>
+
+		<div id="resume"></div>
+		<div id="workflow">
+			<h2 class="workflowSectionTitle"><?php the_field('workflow_title'); ?></h2>			
+			<?php while(has_sub_field('workflow_section')): ?>
+				<div class="workflowSectionText">
+					<?php $image = get_sub_field('workflow_section_icon'); ?>
+					<div class="workflowIconBox">
+						<img class="workflowIcon" src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
+					</div> <!-- end workflowIconBox -->
+				<p class="workflowTitle"><?php the_sub_field('workflow_section_title'); ?></p>
+				<p class="workflowDescription"><?php the_sub_field('workflow_section_description'); ?></p>
+
+				</div> <!-- end workflowSectionText -->
+				<?php $image = get_sub_field('workflow_section_image'); ?>
+				<div class="workflowSectionImage">
+					<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="" class="workflowImage">
+				</div>
+			<?php endwhile; ?>
+		</div> <!-- end workflow -->
+		<div id="contact">
+			<h2 class="contactSectionTitle"><?php the_field('contact_title'); ?></h2>
+			<p class="contactBlurb"><?php the_field('contact_blurb'); ?></p>
+			<?php while(has_sub_field('contact_section')): ?>
+			<div class="contactInformation">
+				<?php $image = get_sub_field('contact_section_icon'); ?>
+				<div class="contactIcon">
+					<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
+				</div>
+				<p class="contactInformationText"><?php the_sub_field('contact_section_info'); ?></p>
+			</div>
+			<?php endwhile; ?>
+			
+		</div> <!-- end contact -->
+	<?php endwhile ?>
     </div> <!--/.content -->
 
 

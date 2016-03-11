@@ -1,17 +1,22 @@
 /*
 * Theme Name: HackerYou Starter Theme
 * Theme URI: http://hackeryou.com;
-* Description: Starter theme for building any website. Created by HackerYou. * Rename this to your own theme page.
+* Description: Starter theme for building any website. Created by HackerYou. * Clare Prowse Portfolio Website March 2016.
 * Version: 1.0
 * Author: HackerYou
 * Author URI: http://hackeryou.com
 */
 
+$lightPink: #ECCAC3;
+$cream: #FAF9F5;
+$darkGrey: #444444;
+
+
 @import 'normalize';
 @import 'typography';
 @import 'navigation';
-@import 'sidebar';
-@import 'comments';
+@import 'header';
+@import 'front-page';
 @import 'footer';
 /*
 ====================================
@@ -25,17 +30,22 @@ img {
 
 body {
 	color: #333;
+	background: linear-gradient($lightPink, $cream, white);
 }
 
 .container {
-	max-width: 1200px;
+	width: 76%;
+	background-color: white;
 	margin: 0 auto;
+	position: relative;
+	top: -7.8rem;
+	z-index: -100;
+
 }
 
 .content {
-	float: left;
-	width: 65%;
-	margin-right: 5%;
+	width: 84%;
+	margin: 0 auto;
 }
 
 .full {

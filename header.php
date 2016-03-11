@@ -14,23 +14,18 @@
 <body <?php body_class(); ?>>
 
 <header>
-  <div class="container">
+  <div class="headerContainer">
       
-      <div class="header">
-        <?php if (has_post_thumbnail( $post->ID ) ): ?>
-          <?php $backgroundimage = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-          <?php endif; ?>
-        <div class="headerNameProfessionBox" style="background-image: url(<?php echo $backgroundimage[0]; ?>)">
-          <p class="headerName"><?php echo get_field('header_name'); ?></p>
-          <p class="headerProfession"><?php the_field('header_profession_title'); ?></p>
-          <?php $logo = get_field('logo'); ?>
-          <img src="<?php echo $logo['sizes']['thumbnail']; ?>" alt="" class="logo">
-          <?php wp_nav_menu( array(
-            'container' => false,
-            'theme_location' => 'primary'
-          )); ?>
-        </div>
-
+      <div class="logoNavBox">
+        <?php $logo = get_field('logo'); ?>
+          <div class="logoBox">
+            <img src="<?php echo $logo['sizes']['thumbnail']; ?>" alt="" class="logo">
+          </div>
+          <nav><?php wp_nav_menu( array(
+              'container' => false,
+              'theme_location' => 'primary'
+            )); ?></nav>
+          <div class="navRuler"></div>
       </div>
 
 
