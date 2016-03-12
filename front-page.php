@@ -24,19 +24,28 @@
 
 		<div id="services">
 			<h2 class="servicesSectionTitle"><?php the_field('service_section_title'); ?></h2>
-			<?php while( has_sub_field('individual_service')): ?>
-				<div class="individualService">
-					<?php $image = get_sub_field('service_icon') ?>
-					<div class= "serviceIconBox"><img src="<?php echo $image['sizes']['thumbnail']; ?>" alt=""></div>
-					<h4><?php the_sub_field('service_title'); ?></h4>
-					<div class="servicesModal">
-						<?php $image = get_sub_field('service_modal_icon') ?>
-						<div><img src="<?php echo $image['sizes']['thumbnail']; ?>" alt=""></div>
-						<h4><?php the_sub_field('service_modal_title'); ?></h4>
-						<p><?php the_sub_field('service_modal_text'); ?></p>
-					</div>
-				</div>
-			<?php endwhile; ?>
+				<div class="allServicesBox">
+						<?php while( has_sub_field('individual_service')): ?>
+						<div class="serviceListBox">
+							<div class="individualService">
+								<?php $image = get_sub_field('service_icon') ?>
+								<div class= "serviceIconBox"><img src="<?php echo $image['sizes']['thumbnail']; ?>" alt=""></div>
+								<h4 class="serviceTitle"><?php the_sub_field('service_title'); ?></h4>
+							</div>
+							<div class="servicesModal">
+								<?php $image = get_sub_field('service_modal_icon') ?>
+								<div class="serviceModalClose">
+									<img src="../images/close.svg" alt="">
+								</div>
+								<div class="serviceModalIcon">
+									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
+								</div>
+								<h4><?php the_sub_field('service_modal_title'); ?></h4>
+								<p><?php the_sub_field('service_modal_text'); ?></p>
+							</div>
+						</div>
+				<?php endwhile; ?>
+			</div>
 		</div> <!-- end services -->
 
 		<div id="portfolio">
@@ -70,32 +79,35 @@
 		<div id="resume"></div>
 		<div id="workflow">
 			<h2 class="workflowSectionTitle"><?php the_field('workflow_title'); ?></h2>			
-			<?php while(has_sub_field('workflow_section')): ?>
-				<div class="workflowSectionText">
-					<?php $image = get_sub_field('workflow_section_icon'); ?>
-					<div class="workflowIconBox">
-						<img class="workflowIcon" src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
-					</div> <!-- end workflowIconBox -->
-				<p class="workflowTitle"><?php the_sub_field('workflow_section_title'); ?></p>
-				<p class="workflowDescription"><?php the_sub_field('workflow_section_description'); ?></p>
-
-				</div> <!-- end workflowSectionText -->
-				<?php $image = get_sub_field('workflow_section_image'); ?>
-				<div class="workflowSectionImage">
-					<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="" class="workflowImage">
-				</div>
-			<?php endwhile; ?>
+			<div class="workflow">
+				<?php while(has_sub_field('workflow_section')): ?>
+					<div class="workflowSection">
+						<div class="workflowSectionText">
+							<?php $image = get_sub_field('workflow_section_icon'); ?>
+							<div class="workflowIconBox">
+								<img class="workflowIcon" src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
+							</div> <!-- end workflowIconBox -->
+							<p class="workflowTitle"><?php the_sub_field('workflow_section_title'); ?></p>
+							<p class="workflowDescription"><?php the_sub_field('workflow_section_description'); ?></p>
+						</div> <!-- end workflowSectionText -->
+						<?php $image = get_sub_field('workflow_section_image'); ?>
+						<div class="workflowSectionImage">
+							<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="" class="workflowImage">
+						</div>
+					</div>
+				<?php endwhile; ?>
+			</div> <!-- end workflowSection -->
 		</div> <!-- end workflow -->
 		<div id="contact">
-			<h2 class="contactSectionTitle"><?php the_field('contact_title'); ?></h2>
-			<p class="contactBlurb"><?php the_field('contact_blurb'); ?></p>
-			<?php while(has_sub_field('contact_section')): ?>
+			<h2 class="contactSectionTitle"><?php the_field('contact_section_title'); ?></h2>
+			<p class="contactBlurb"><?php the_field('contact_section_blurb'); ?></p>
+			<?php while(has_sub_field('contact_method')): ?>
 			<div class="contactInformation">
-				<?php $image = get_sub_field('contact_section_icon'); ?>
+				<?php $image = get_sub_field('contact_method_icon'); ?>
 				<div class="contactIcon">
 					<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
 				</div>
-				<p class="contactInformationText"><?php the_sub_field('contact_section_info'); ?></p>
+				<p class="contactInformationText"><?php the_sub_field('contact_method_info'); ?></p>
 			</div>
 			<?php endwhile; ?>
 			
