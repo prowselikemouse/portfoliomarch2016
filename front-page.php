@@ -92,32 +92,37 @@
 							<p class="workflowDescription"><?php the_sub_field('workflow_section_description'); ?></p>
 						</div> <!-- end workflowSectionText -->
 						<?php $image = get_sub_field('workflow_section_image'); ?>
-						<div class="workflowSectionImage">
+						<div class="workflowSectionImage clearfix">
 							<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="" class="workflowImage">
+						</div>
+						<div class="connectorLine">
+							<img src="<?php bloginfo('template_directory'); ?>/images/connector.svg" alt="">
 						</div>
 					</div> <!-- end workflowSection -->
 				<?php endwhile; ?>
 			</div> 
 		</div> <!-- end workflow -->
+    </div> <!--/.content -->
+  </div> <!-- /.container -->
+</div> <!-- /.main -->
+  <!-- <div class="content"> -->
 		<div id="contact">
 			<h2 class="contactSectionTitle"><?php the_field('contact_section_title'); ?></h2>
-			<p class="contactBlurb"><?php the_field('contact_section_blurb'); ?></p>
-			<?php while(has_sub_field('contact_method')): ?>
-			<div class="contactInformation">
-				<?php $image = get_sub_field('contact_method_icon'); ?>
-				<div class="contactIcon">
-					<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
-				</div>
-				<p class="contactInformationText"><?php the_sub_field('contact_method_info'); ?></p>
-			</div>
-			<?php endwhile; ?>
+			<div class="contactSectionInformation">
+				<p class="contactBlurb"><?php the_field('contact_section_blurb'); ?></p>
+					<div class="contactInformationBox">
+						<?php while(has_sub_field('contact_method')): ?>
+							<div class="contactInformation">
+								<?php $image = get_sub_field('contact_method_icon'); ?>
+								<div class="contactIcon">
+									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
+								</div>
+								<p class="contactInformationText"><?php the_sub_field('contact_method_info'); ?></p>
+							</div>
+						<?php endwhile; ?>
+					</div>
+			<!-- </div> -->
 			
 		</div> <!-- end contact -->
 	<?php endwhile ?>
-    </div> <!--/.content -->
 
-
-  </div> <!-- /.container -->
-</div> <!-- /.main -->
-
-<?php get_footer(); ?>

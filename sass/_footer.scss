@@ -1,3 +1,10 @@
 footer {
 	clear: both;
+	height: 6rem;
+	background-color: $lightPink;
+	margin: 0;
+	div.container {
+		position: static;
+		background-color: $lightPink;
+	}
 }

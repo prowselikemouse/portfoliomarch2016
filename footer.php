@@ -1,12 +1,14 @@
 <footer>
   <div class="container">
     <p>&copy; Clare Prowse | <?php echo date('Y'); ?></p>
-    <div class="socialNav">
-	    <?php wp_nav_menu( array(
-	        'container' => false,
-	        'theme_location' => 'social'
-	      )); ?>
-      </div>
+    <!-- <div class="socialNavBox">
+	   <ul class="socialNav">
+	   	<li class="github"><img src="<?php bloginfo('template_directory'); ?>/images/git.svg" alt=""></li>
+	   	<li class="behance"><img src="<?php bloginfo('template_directory'); ?>/images/behance.svg" alt=""></li>
+	   	<li class="twitter"><img src="<?php bloginfo('template_directory'); ?>/images/twitter.svg" alt=""></li>
+	   	<li class="linkedin"><img src="<?php bloginfo('template_directory'); ?>/images/linkedin.svg" alt=""></li>
+	   </ul>
+	</div> -->
   </div>
 </footer>
 

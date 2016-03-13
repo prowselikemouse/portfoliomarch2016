@@ -11,6 +11,13 @@ $lightPink: #ECCAC3;
 $cream: #FAF9F5;
 $darkGrey: #444444;
 
+@mixin clearfix() {
+	&::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+}
 
 @import 'normalize';
 @import 'typography';
