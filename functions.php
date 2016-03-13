@@ -300,3 +300,5 @@ function remove_empty_p( $content ) {
 	}
 
 add_filter('the_content', 'remove_empty_p', 20, 1);
+
+add_filter( 'show_admin_bar', '__return_false' );

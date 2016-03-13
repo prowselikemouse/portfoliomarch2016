@@ -7,6 +7,8 @@
   <title><?php  wp_title('|', true, 'right'); ?></title>
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
   <!-- stylesheets should be enqueued in functions.php -->
+  <script src="https://use.typekit.net/hpa2uhr.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <?php wp_head(); ?>
 </head>
 

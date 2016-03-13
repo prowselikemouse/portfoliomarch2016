@@ -17,13 +17,13 @@
 					<div class="aboutContentBox">
 						<h3 class="myName"><?php the_title(); ?></h3>
 						<p class="myProfession"><?php the_field('about_subtitle'); ?></p>
-						<p class="aboutMe"><?php the_content(); ?></p>
+						<div class="aboutMe"><?php the_content(); ?></div>
 					</div>
 				</div> <!-- end aboutBox -->
 			</div> <!-- end about -->
 
-		<div id="services">
-			<h2 class="servicesSectionTitle"><?php the_field('services_section_title'); ?></h2>
+		<div id="services" class="section">
+			<h3 class="serviceSectionTitle"><?php the_field('services_section_title'); ?></h3>
 				<div class="allServicesBox">
 						<?php while( has_sub_field('individual_service')): ?>
 						<div class="serviceListBox">
@@ -40,16 +40,16 @@
 								<div class="serviceModalIcon">
 									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
 								</div>
-								<h4><?php the_sub_field('service_modal_title'); ?></h4>
-								<p><?php the_sub_field('service_modal_text'); ?></p>
+								<h4 class="serviceModalTitle"><?php the_sub_field('service_modal_title'); ?></h4>
+								<p class="serviceModalText"><?php the_sub_field('service_modal_text'); ?></p>
 							</div>
 						</div>
 				<?php endwhile; ?>
 			</div>
 		</div> <!-- end services -->
 
-		<div id="portfolio">
-			<h2><?php the_field('portfolio_section_title'); ?></h2>
+		<div id="portfolio" class="section">
+			<h3 class="sectionTitle"><?php the_field('portfolio_section_title'); ?></h3>
 				<?php $portfolioQuery = new WP_Query(array(
 						'post_type' => 'portfolio'
 					));?>
@@ -60,7 +60,7 @@
 					<div class="portfolioPiece">
 						<div class="portfolioPieceText">
 							<h4 class="pieceType"><?php the_field('piece_type'); ?></h4>
-							<p class="pieceTitle"><?php the_title(); ?></p>
+							<div class="pieceTitle"><?php the_title(); ?></div>
 							<p class="pieceBuiltWith"><?php the_field('piece_built_with'); ?></p>
 							<div class="pieceDescription"><?php the_content(); ?></div>
 							<div class="pieceViewLiveButton"><?php the_field('piece_view_live_button'); ?></div>
@@ -78,51 +78,38 @@
 		</div>
 
 		<div id="resume"></div>
-		<div id="workflow">
-			<h2 class="workflowSectionTitle"><?php the_field('workflow_title'); ?></h2>			
-			<div class="workflow">
+		<div id="workflow" class="section">
+			<h3 class="sectionTitle"><?php the_field('workflow_title'); ?></h3>			
 				<?php while(has_sub_field('workflow_section')): ?>
-					<div class="workflowSection">
-						<div class="workflowSectionText">
-							<?php $image = get_sub_field('workflow_section_icon'); ?>
-							<div class="workflowIconBox">
-								<img class="workflowIcon" src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
-							</div> <!-- end workflowIconBox -->
-							<p class="workflowTitle"><?php the_sub_field('workflow_section_title'); ?></p>
-							<p class="workflowDescription"><?php the_sub_field('workflow_section_description'); ?></p>
-						</div> <!-- end workflowSectionText -->
-						<?php $image = get_sub_field('workflow_section_image'); ?>
-						<div class="workflowSectionImage clearfix">
-							<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="" class="workflowImage">
-						</div>
-						<div class="connectorLine">
-							<img src="<?php bloginfo('template_directory'); ?>/images/connector.svg" alt="">
-						</div>
-					</div> <!-- end workflowSection -->
-				<?php endwhile; ?>
+			<div class="workflow">
+				<div class="workflowSection">
+					<div class="workflowSectionText">
+						<?php $image = get_sub_field('workflow_section_icon'); ?>
+						<div class="workflowIconBox">
+							<img class="workflowIcon" src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
+						</div> <!-- end workflowIconBox -->
+						<p class="workflowTitle"><?php the_sub_field('workflow_section_title'); ?></p>
+						<p class="workflowDescription"><?php the_sub_field('workflow_section_description'); ?></p>
+					</div> <!-- end workflowSectionText -->
+					<?php $image = get_sub_field('workflow_section_image'); ?>
+					<div class="workflowSectionImage">
+						<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="" class="workflowImage">
+					</div>
+				</div> <!-- end workflowSection -->
+				<div class="connectorLine">
+					<img src="<?php bloginfo('template_directory'); ?>/images/connector.svg" alt="">
+				</div>
 			</div> 
+				<?php endwhile; ?>
 		</div> <!-- end workflow -->
+  <!-- <div class="content"> -->
+		
+			<!-- </div> -->
+		</div> <!-- end contact -->
     </div> <!--/.content -->
+	<?php endwhile ?>
   </div> <!-- /.container -->
 </div> <!-- /.main -->
-  <!-- <div class="content"> -->
-		<div id="contact">
-			<h2 class="contactSectionTitle"><?php the_field('contact_section_title'); ?></h2>
-			<div class="contactSectionInformation">
-				<p class="contactBlurb"><?php the_field('contact_section_blurb'); ?></p>
-					<div class="contactInformationBox">
-						<?php while(has_sub_field('contact_method')): ?>
-							<div class="contactInformation">
-								<?php $image = get_sub_field('contact_method_icon'); ?>
-								<div class="contactIcon">
-									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
-								</div>
-								<p class="contactInformationText"><?php the_sub_field('contact_method_info'); ?></p>
-							</div>
-						<?php endwhile; ?>
-					</div>
-			<!-- </div> -->
-			
-		</div> <!-- end contact -->
-	<?php endwhile ?>
+
+<?php get_footer(); ?>
 

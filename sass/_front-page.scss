@@ -5,7 +5,7 @@ div.headerBox {
 	background-position: center;
 	margin: 0 auto;
 	position: relative;
-	top: -5.4rem;
+	top: -8rem;
 	img {
 		z-index: -400;
 		transform: rotateY(180deg);
@@ -18,10 +18,9 @@ div#about {
 
 div.aboutBox {
 	background-color: white;
-	width: 36%;
-	height: 24rem;
+	width: 36rem;
 	position: absolute;
-	top: 36rem;
+	top: 56rem;
 	left: -3rem;
 }
 
@@ -29,7 +28,7 @@ div.aboutBox:before {
 	content: "";
 	display: block;
 	width: 100%;
-	height: 24rem;
+	height: 100%;
 	border: 3px solid $darkGrey;
 	position: absolute;
 	left: -1.6rem;
@@ -37,77 +36,98 @@ div.aboutBox:before {
 }
 
 div.aboutContentBox {
-	padding: 2rem;
-}
-
-div.allServicesBox {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	position: relative;
-}
-
-div.serviceListBox {
-
-}
-
-div.individualService {
-	width: 10rem;
-
-}
-
-div.serviceIconBox {
-	margin: 0 auto;
-	width: 8rem;
-	position: relative;
-	&:before {
-		content:" ";
-		display: inline-block;
-		width: 8rem;
-		height: 8rem;
-		background-color: red;
-		border-radius: 50%;
-		position: absolute;
-		left: 0.6rem;
-		z-index: -100;
+	padding: 3rem 5rem 3rem 3rem;
+	h3.myName {
+		font-family: $headlineFont;
+		font-size: 2.4rem;
+		padding: 0;
+		margin-bottom: 2rem;
+	}
+	p {
+		font-family: $bodyFont;
+		font-size: 1.6rem;
 	}
 }
 
-h4.serviceTitle {
-	text-align: center;
-}
-
-div.servicesModal {
-	width: 16rem;
-	height: 18rem;
-	position: absolute;
-	top: 0;
-	padding: 1rem;
-	background-color: pink;
-	clear: both;
-	display: none;
-	 &:after {
-		  display: block;
-		  content: "";
+#services {
+	h3.serviceSectionTitle {
+		margin-bottom: 6rem;
+		font-family: $headlineFont;
+		font-size: 2.4rem;
 	}
-	div.serviceModalClose {
-		float: right;
-		width: 1.4rem;
-		padding: 0.2rem;
+
+	div.allServicesBox {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		position: relative;
+	}
+
+	div.individualService {
+		h4.serviceTitle {
+			text-align: center;
+			font-family: $bodyFont;
+			font-size: 1.4rem;
 		}
 
-	div.serviceModalIcon {
-		width: 3rem;
 	}
-	&:after {
-		content: "";
-		display: block;
+
+	div.serviceIconBox {
+		margin: 0 auto;
+		width: 12rem;
+		position: relative;
+		&:before {
+			content:" ";
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient($lightPink, $cream) ;
+			border-radius: 50%;
+			position: absolute;
+			left: 0.6rem;
+			z-index: -100;
+		}
+	}
+
+
+	div.servicesModal {
 		width: 16rem;
 		height: 18rem;
-		border: 3px solid $darkGrey;
 		position: absolute;
-		top: 0.6rem;
-		right: 0.6rem;
+		top: 0;
+		padding: 1rem;
+		background-color: white;
+		clear: both;
+		display: none;
+		 &:after {
+			  display: block;
+			  content: "";
+		}
+		div.serviceModalClose {
+			float: right;
+			width: 1.4rem;
+			padding: 0.2rem;
+			}
+
+		div.serviceModalIcon {
+			width: 3rem;
+		}
+		h4.serviceModalTitle {
+			font-family: $headlineFont;
+		}
+		p.serviceModalText {
+			font-family: $bodyFont;
+		}
+		&:after {
+			content: "";
+			display: block;
+			width: 16rem;
+			height: 18rem;
+			border: 3px solid $darkGrey;
+			position: absolute;
+			top: 0.6rem;
+			right: 0.6rem;
+		}
 	}
 }
 
@@ -115,9 +135,9 @@ div.portfolioPiece {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	text-align: right;
-	margin-bottom: 3rem;
+	margin-bottom: 8rem;
 	&:nth-of-type(even) {
 		flex-direction: row-reverse;
 		text-align: left;
@@ -131,12 +151,26 @@ div.portfolioPiece {
 
 div.portfolioPieceText {
 	width: 40%;
+	font-family: $bodyFont;
+	h4.pieceType {
+		font-family: $headlineFont;
+		font-size: 1.8rem;
+	}
+	div.pieceTitle {
+		font-size: 1.6rem;
+	}
+	p.pieceBuiltWith,
+	div.pieceDescription {
+		font-size: 1.2rem;
+	}
 	div.pieceViewLiveButton p {
+		font-size: 1.6rem;
 		text-decoration: none;
-		background-color: pink;
+		background-color: $lightPink;
+		color: white;
 		padding: 0.6rem;
 		text-align: center;
-		width: 6rem;
+		width: 10rem;
 		margin: 0;
 	}
 }
@@ -150,110 +184,88 @@ div.portfolioImageBox {
 		left: 0;
 		z-index: -1;
 	}
-
 	.portfolioImageScreen {
 		width: 100%;
 	}
 
 }
 
-div.workflowSection {
-	display: flex;
-	margin: 0 auto;	
-	// padding: 4rem;
-	align-items: center;
-	div.workflowIconBox {
-		width: 2rem;
-	}
-	div.workflowSectionImage {
-		display: block;
-		padding: 3rem;
-	}
-	div.workflowSectionText {
-		width: 34.8%;
-		// display: flex;
-		// flex-direction: column;
-		// justify-content: center;
-		p.workflowDescription {
-			font-size: 0.8rem;
-		}
-	}
-	&:nth-of-type(odd) {
-		div.workflowSectionText {
-			text-align: right;
-			padding-right: 2rem;
-			&::after {
-			  display: block;
-			  content: "";
-			  clear: both;
+div#workflow {
+	div.workflow {
+		div.workflowSection {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			margin: 0 auto;	
+			div.workflowSectionText {
+				width: 34%;
+				// display: flex;
+				// flex-direction: column;
+				// justify-content: center;
+				div.workflowIconBox {
+					width: 3rem;
+				}
+				p.workflowTitle {
+					font-family: $headlineFont;
+					font-size: 1.8rem;
+				}
+				p.workflowDescription {
+					font-family: $bodyFont;
+					font-size: 1.4rem;
+				}
 			}
-			div.workflowIconBox {
+			div.workflowSectionImage {
 				display: block;
-				float: right;
-				&::after {
-				  display: block;
-				  content: "";
-				  clear: both;
-				}
+				padding: 2rem 6rem;
 			}
-			p.workflowTitle {
-				&::before {
-				  display: block;
-				  content: "";
-				  clear: both;
+		}		
+		div.connectorLine {
+			width: 28rem;
+			margin: 0 auto;
+		}
+		&:nth-of-type(odd) {
+			div.workflowSection {
+				div.workflowSectionText {
+					text-align: right;
+					div.workflowIconBox {
+						display: block;
+						float: right;
+						&::after {
+						  display: block;
+						  content: "";
+						  clear: both;
+						}
+					}
+					p.workflowTitle {
+						&::before {
+						  display: block;
+						  content: "";
+						  clear: both;
+						}
+					}
+				}
+				&:after {
+					content: "";
+					display: block;
 				}
 			}
 		}
-		// &:after {
-		// 	content: "";
-		// 	display: block;
-
-		// }
-	}
-	&:nth-of-type(even) {
-		flex-direction: row-reverse;
-		div.workflowSectionText {
-			text-align: left;
-			padding-left: 2rem;
-			p.workflowTitle {
+		&:nth-of-type(even) {
+			div.connectorLine {
+				transform: rotateY(180deg);
+			}
+			div.workflowSection {
+			flex-direction: row-reverse;
 			}
 		}
-	}
-
-	div.connectorLine {
-		&::before {
-			display: block;
-			content: "";
-			clear: both;
-		}
-	}	
-}
-
-#contact {
-	background: linear-gradient(white, $cream, $lightPink);
-	padding: 0 10rem 10rem 10rem;
-	div.contactSectionInformation {
-		margin: 0 auto;
-		width: 80%;
-		// height: 10rem;
-		background-color: white;
-		display: flex;
-		flex-direction: row;
-		padding: 2rem;
-		div.contactInformationBox {
-			flex-direction: column;
-			div.contactInformation {
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-				div.contactIcon {
-					width: 2rem;
-					// padding-right: 2rem;
-				}
+		&:last-of-type {
+			div.connectorLine {
+				display: none;
 			}
 		}
 	}
 }
+
 
 
 
