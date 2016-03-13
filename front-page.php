@@ -23,19 +23,19 @@
 			</div> <!-- end about -->
 
 		<div id="services">
-			<h2 class="servicesSectionTitle"><?php the_field('service_section_title'); ?></h2>
+			<h2 class="servicesSectionTitle"><?php the_field('services_section_title'); ?></h2>
 				<div class="allServicesBox">
 						<?php while( has_sub_field('individual_service')): ?>
 						<div class="serviceListBox">
 							<div class="individualService">
-								<?php $image = get_sub_field('service_icon') ?>
+								<?php $image = get_sub_field('service_icon') ?> 
 								<div class= "serviceIconBox"><img src="<?php echo $image['sizes']['thumbnail']; ?>" alt=""></div>
 								<h4 class="serviceTitle"><?php the_sub_field('service_title'); ?></h4>
 							</div>
 							<div class="servicesModal">
 								<?php $image = get_sub_field('service_modal_icon') ?>
 								<div class="serviceModalClose">
-									<img src="../images/close.svg" alt="">
+									<img src="<?php bloginfo('template_directory'); ?>/images/close_x.svg" alt=""/>
 								</div>
 								<div class="serviceModalIcon">
 									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
@@ -50,29 +50,30 @@
 
 		<div id="portfolio">
 			<h2><?php the_field('portfolio_section_title'); ?></h2>
-			<?php $portfolioQuery = new WP_Query(array(
-					'post_type' => 'portfolio'
-				));?>
-				<?php if($portfolioQuery -> have_posts() ): ?>
-				<?php while ($portfolioQuery -> have_posts() ): ?>
-				<?php $portfolioQuery -> the_post(); ?>
+				<?php $portfolioQuery = new WP_Query(array(
+						'post_type' => 'portfolio'
+					));?>
+					<?php if($portfolioQuery -> have_posts() ): ?>
+					<?php while ($portfolioQuery -> have_posts() ): ?>
+					<?php $portfolioQuery -> the_post(); ?>
+				
 					<div class="portfolioPiece">
-						
-							<div class="portfolioPieceText">
-								<h4 class="pieceType"><?php the_field('piece_type'); ?></h4>
-								<p class="pieceTitle"><?php the_title(); ?></p>
-								<p class="pieceBuiltWith"><?php the_field('piece_built_with'); ?></p>
-								<p class="pieceDescription"><?php the_content(); ?></p>
-								<p class="pieceViewLiveButton"><?php the_field('piece_view_live_button'); ?></p>
-							</div>
-							<div class="portfolioImageBox">
-								<?php $imageUrl = get_featured_image_url($post);?> 
-								<img src="<?php echo $imageUrl ?>" alt="">
-							</div>
+						<div class="portfolioPieceText">
+							<h4 class="pieceType"><?php the_field('piece_type'); ?></h4>
+							<p class="pieceTitle"><?php the_title(); ?></p>
+							<p class="pieceBuiltWith"><?php the_field('piece_built_with'); ?></p>
+							<div class="pieceDescription"><?php the_content(); ?></div>
+							<div class="pieceViewLiveButton"><?php the_field('piece_view_live_button'); ?></div>
+						</div>
+						<div class="portfolioImageBox">
+							<?php $imageUrl = get_featured_image_url($post);?> 
+							<img class="portfolioImageScreen" src="<?php bloginfo('template_directory'); ?>/images/computer_border.svg" alt=""/>
+							<img class="portfolioImage" src="<?php echo $imageUrl ?>" alt="">
+						</div>
 					</div>
-				<?php endwhile; ?>
-			<?php endif; ?>
-			<?php wp_reset_postdata(); ?>
+					<?php endwhile; ?>
+				<?php endif; ?>
+				<?php wp_reset_postdata(); ?>
 			
 		</div>
 
@@ -94,9 +95,9 @@
 						<div class="workflowSectionImage">
 							<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="" class="workflowImage">
 						</div>
-					</div>
+					</div> <!-- end workflowSection -->
 				<?php endwhile; ?>
-			</div> <!-- end workflowSection -->
+			</div> 
 		</div> <!-- end workflow -->
 		<div id="contact">
 			<h2 class="contactSectionTitle"><?php the_field('contact_section_title'); ?></h2>

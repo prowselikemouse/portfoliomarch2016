@@ -291,3 +291,12 @@ function get_featured_image_url($post){
 	$image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
 	return $image[0];
 }
+
+function remove_empty_p( $content ) {
+		$content = force_balance_tags( $content );
+		$content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
+		$content = preg_replace( '~\s?<p>(\s|&nbsp;)+</p>\s?~', '', $content );
+		return $content;
+	}
+
+add_filter('the_content', 'remove_empty_p', 20, 1);
