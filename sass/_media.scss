@@ -1,0 +1,314 @@
+@media (max-width:770px) {
+	div.container {
+		top: -9.4rem;
+		div.content {
+			h3.sectionTitle {
+				margin-bottom: 6rem;
+			}
+		}
+	}
+	div.headerContainer {
+		margin-top: 10rem;
+	}
+	div.logoNavBox {
+		div.logoBox {
+			width: 12rem;
+			left: 2rem;
+			bottom: -5.6rem;
+		}
+		nav ul.menu {
+			padding: 0.8rem 1.6rem;
+		}
+		div.navRuler {
+			width: 100%;
+			height: 4rem;
+		}
+	}
+	#about {
+		div.headerBox {
+			top:-5rem;
+			}
+		div.aboutBox {
+			width: 30rem;
+			top: 32rem;
+			div.aboutContentBox {
+				padding: 2rem 2.6rem 4rem 4rem;
+				h3.myName {
+					margin-top: 5rem;
+				}
+			}
+		}
+	}
+	#services {
+		div.serviceIconBox {
+			width: 10rem;
+		}
+	}
+	div.portfolioPiece {
+		flex-direction: column-reverse;
+		margin-bottom: 6rem;
+		&:nth-of-type(even) {
+			flex-direction: column-reverse;
+		}
+		&:nth-of-type(odd) {
+			align-items: flex-end;
+			div.portfolioImageBox {
+				float: right;
+			}
+			div.portfolioPieceText {
+				// text-align: left;
+			}
+		}
+		div.pieceViewLiveButton {
+			margin-top: 2rem;
+		}
+		div.portfolioImageBox {
+			width: 70%;
+			margin-bottom: 2rem;
+		}
+		div.portfolioPieceText {
+			width: 100%;
+		}
+
+	}
+	// div.portfolioPiece {
+	// 	position: relative;
+	// 	div.portfolioPieceText {
+	// 		background-color: white;
+	// 		position: relative;
+	// 		left: -8rem;
+	// 		padding: 4rem;
+	// 		width: 60%;
+	// 	}
+	// }
+	div#workflow {
+		div.workflow {
+			div.workflowSection {
+				div.workflowSectionText {
+					width: 28%;
+				}
+				div.workflowSectionImage {
+					padding: 3rem;
+				}
+			}
+				div.connectorLine {
+					width: 23rem;
+					margin-bottom: 1rem;
+				}
+		}
+	}
+	footer {
+		.container {
+			width: 90%;
+		}
+		#contact {
+			div.content {
+				div.contactSectionInformation {
+					flex-direction: column;
+					p.contactBlurb {
+							width: 100%;
+							margin-bottom: 2rem;
+						}
+					div.contactInformationBox {
+						margin-left: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width:480px) {
+	ul.menu {
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		background-color: white;
+		border: none;
+		border-bottom: 3px solid $darkGrey;
+		display: flex;
+		justify-content: space-between;
+		li {
+			a {
+				padding: 0;
+			}
+		}
+	}
+	header {
+		div.headerContainer {
+			div.logoBox {
+				top: -4rem;
+				left: 0;
+				margin: 0 auto;
+			}
+			div.navRuler {
+				visibility: hidden;
+				position: absolute;
+				height: 8rem;
+				top: 0;
+				left: 0;
+				z-index: -10;
+				margin-top: 0;
+			}
+		}
+	}
+	div#about {
+		div.aboutBox {
+			position: relative;
+			top: 0;
+			left: -5rem;
+			width: 41rem;
+			margin-bottom: 8rem;
+			background-color: rgba(255,255,255,0);
+			border: 3px solid $darkGrey;
+			&:before {
+				display: none;
+			}
+			div.aboutContentBox {
+				padding: 3rem 5rem;
+			}
+		}
+	}
+	div#services {
+		div.allServicesBox {
+			flex-flow: row wrap;
+			padding: 0 2rem;
+		}
+	}
+	div#portfolio {
+		div.portfolioPiece {
+			justify-content: center;
+			&:nth-of-type(odd) {
+				div.portfolioPieceText {
+					div.pieceViewLiveButton p {
+						float: none;
+						margin: 0 auto;
+					}
+				}
+			}
+			div.portfolioPieceText {
+				text-align: center;
+				div.pieceViewLiveButton p {
+					margin: 0 auto;
+				}
+			}
+			div.portfolioImageBox {
+				width: 80%;
+				margin: 0 auto;
+			}
+		}
+	}
+	div#workflow {
+		div.workflow {
+			div.workflowSection {
+				div.workflowSectionText {
+					width: 50%;
+				}
+				div.workflowSectionImage {
+					padding: 0;
+					padding-left: 2rem;
+				}
+			}
+			div.connectorLine {
+				width: 30rem;
+			}
+			&:nth-of-type(even) {
+				div.workflowSection {
+					div.workflowSectionText {
+						text-align: right;
+							&:after {
+								content:"";
+								display: block;
+								clear: both;
+							}
+						div.workflowIconBox {
+							float: right;
+						}
+						div.workflowTitle {
+							&:before {
+								content:"";
+								display: block;
+								clear: both;
+							}
+						}
+					}
+					div.workflowSectionImage {
+						padding-left: 0;
+						padding-right: 2rem;
+					}
+				}
+			}
+			&:nth-of-type(odd) {
+				div.workflowSection {
+					div.workflowSectionText {
+						text-align: left;
+							&:after {
+								content:"";
+								display: block;
+								clear: both;
+							}
+						div.workflowIconBox {
+							float: left;
+						}
+						div.workflowTitle {
+							&:before {
+								content:"";
+								display: block;
+								clear: both;
+							}
+						}
+					}
+					div.workflowSectionImage {
+						padding-right: 0;
+						padding-left: 2rem;
+					}
+				}
+			}
+		}
+	}
+	footer {
+		div.container {
+			div.section {
+				margin-bottom: 0rem;
+			}
+			div#contact {
+				div.content {
+					position: relative;
+					top: -10rem;
+					h3.sectionTitle {
+						margin-top: 4rem;
+					}
+					div.contactSectionInformation {
+						width: 100%;
+						padding: 4rem 3rem;
+						margin-bottom: 0;
+						&:after {
+							left: -2rem;
+							height: 90%;
+							width: 110%;
+						}
+					}
+				}
+			}
+			div.footerContent {
+				flex-direction: column-reverse;
+				justify-content: center;
+				p {
+					text-align:center;
+				}
+				div.socialNavBox {
+					margin: 0 auto;
+					ul.socialNav {
+						padding: 0;
+					}
+				}
+			}
+
+		}
+	}
+}
