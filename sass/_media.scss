@@ -312,3 +312,94 @@
 		}
 	}
 }
+
+@media (max-width:320px) {
+	div.main {
+		div.container {
+			width: 86%;
+			div.content {
+				width: 90%;
+			}
+		}
+	}
+	div#about {
+		div.aboutBox {
+			left: -2.5rem;
+			width: 120%;
+			margin: 0;
+			padding: 0;
+		}
+	}
+	div#services {
+		h3.serviceSectionTitle {
+			margin-top: 8rem;
+			margin-bottom: 4rem;
+		}
+		div.allServicesBox {
+			flex-flow: column;
+		}
+	}
+	div#portfolio {
+		div.portfolioPiece {
+			div.portfolioImageBox {
+				width: 95%;
+			}
+		}
+	}
+	div#workflow {
+		div.workflow {
+			&:after {
+				margin-top: 2rem;
+				content: "";
+				background-color: $darkGrey;
+				width: 3px;
+				height: 6rem;
+			}
+			// &:last-child {
+			// 	&:after {
+			// 		display: none;
+			// 	}
+			// }
+			div.workflowSection {
+				div.workflowSectionText {
+					width: 100%;
+					text-align: center;
+					margin: 0 auto;
+				}
+				div.workflowSectionImage {
+					padding: 1rem;
+				}
+			}
+			div.connectorLine {
+				display: none;
+			}
+		}
+		div.workflow:nth-of-type(even),
+		div.workflow:nth-of-type(odd) {
+			div.workflowSection {
+				flex-direction: column;
+				div.workflowSectionImage {
+					padding: 0;
+				}
+				div.workflowSectionText {
+					text-align: left;
+						&:after {
+							content:"";
+							display: block;
+							clear: both;
+						}
+					div.workflowIconBox {
+						float: none;
+					}
+					div.workflowTitle {
+						&:before {
+							content:"";
+							display: block;
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+}
