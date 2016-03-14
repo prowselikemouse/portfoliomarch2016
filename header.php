@@ -16,6 +16,17 @@
 <body <?php body_class(); ?>>
 
 <header>
+<!--   <div id="menu-toggle">
+    <div id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div id="cross">
+      <span></span>
+      <span></span>
+    </div>
+  </div> -->
   <div class="headerContainer">
       
       <div class="logoNavBox">

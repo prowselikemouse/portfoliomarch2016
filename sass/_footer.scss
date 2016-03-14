@@ -7,70 +7,70 @@ footer {
 	div.container {
 		position: static;
 		background-color: rgba(255,255,255,0);
-		#contact {
-			div.contactSectionInformation {
-				font-family: $bodyFont;
-				font-size: 1.6rem;
-				margin: 0 auto;
-				width: 90%;
-				// height: 10rem;
-				background-color: white;
-				display: flex;
-				flex-direction: row;
-				align-items: flex-start;
-				padding: 4rem 6rem;
-				margin-bottom: 8rem;
-				position: relative;
-				z-index: 10;
-				&::after {
-					content: "";
-					display: block;
-					border: 3px solid $darkGrey;
-					height: 100%;
-					width: 100%;
-					position: absolute;
-					top: 1rem;
-					left: 1rem;
-				}
-				p.contactBlurb {
-					margin: 0;
-					width: 50%;
-				}
-				div.contactInformationBox {
-					flex-direction: column;
-					margin-left: 2rem;
-					div.contactInformation {
-						display: flex;
-						flex-direction: row;
-						div.contactIcon {
-							width: 2rem;
-							margin-right: 1.4rem;
-						}
-						p.contactInformationText {
-							margin: 0;
-						}
-					}
-				}
+	}
+}
+
+div.contactSectionInformation {
+	font-family: $bodyFont;
+	font-size: 1.6rem;
+	margin: 0 auto;
+	width: 90%;
+	// height: 10rem;
+	background-color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 4rem 6rem;
+	margin-bottom: 8rem;
+	position: relative;
+	z-index: 10;
+	&::after {
+		content: "";
+		display: block;
+		border: 3px solid $darkGrey;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+	}
+	p.contactBlurb {
+		margin: 0;
+		width: 50%;
+	}
+	div.contactInformationBox {
+		flex-direction: column;
+		margin-left: 2rem;
+		div.contactInformation {
+			display: flex;
+			flex-direction: row;
+			div.contactIcon {
+				width: 2rem;
+				margin-right: 1.4rem;
+			}
+			p.contactInformationText {
+				margin: 0;
 			}
 		}
-				div.footerContent {
-					display: flex;
-					flex-direction: row;
-					justify-content: space-between;
-					margin-bottom: 2rem;
-					p {
-						font-family: $bodyFont;
-						font-size: 1.4rem;
-					}
-				}
-				ul.socialNav {
-					list-style: none;
-					display: flex;
-					flex-direction: row;
-					// justify-content: space-between
-					li {
-						width: 4rem;
-					}
-				}
-			}
-		}
+	}
+}
+
+div.footerContent {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+	p {
+		font-family: $bodyFont;
+		font-size: 1.4rem;
+	}
+}
+ul.socialNav {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	// justify-content: space-between
+	li {
+		width: 4rem;
+	}
+}

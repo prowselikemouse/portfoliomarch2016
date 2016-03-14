@@ -49,87 +49,87 @@ div.aboutContentBox {
 	}
 }
 
-#services {
-	h3.serviceSectionTitle {
-		margin-bottom: 6rem;
-		font-family: $headlineFont;
-		font-size: 2.4rem;
+
+h3.serviceSectionTitle {
+	margin-bottom: 6rem;
+	font-family: $headlineFont;
+	font-size: 2.4rem;
+}
+
+div.allServicesBox {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: relative;
+}
+
+div.individualService {
+	h4.serviceTitle {
+		text-align: center;
+		font-family: $bodyFont;
+		font-size: 1.4rem;
 	}
 
-	div.allServicesBox {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		position: relative;
-	}
+}
 
-	div.individualService {
-		h4.serviceTitle {
-			text-align: center;
-			font-family: $bodyFont;
-			font-size: 1.4rem;
-		}
-
-	}
-
-	div.serviceIconBox {
-		margin: 0 auto;
-		width: 12rem;
-		position: relative;
-		&:before {
-			content:" ";
-			display: inline-block;
-			width: 100%;
-			height: 100%;
-			background: linear-gradient($lightPink, $cream) ;
-			border-radius: 50%;
-			position: absolute;
-			left: 0.6rem;
-			z-index: -100;
-		}
-	}
-
-
-	div.servicesModal {
-		width: 16rem;
-		height: 18rem;
+div.serviceIconBox {
+	margin: 0 auto;
+	width: 12rem;
+	position: relative;
+	&:before {
+		content:" ";
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient($lightPink, $cream) ;
+		border-radius: 50%;
 		position: absolute;
-		top: 0;
-		padding: 1rem;
-		background-color: white;
-		clear: both;
-		display: none;
-		 &:after {
-			  display: block;
-			  content: "";
-		}
-		div.serviceModalClose {
-			float: right;
-			width: 1.4rem;
-			padding: 0.2rem;
-			}
-
-		div.serviceModalIcon {
-			width: 3rem;
-		}
-		h4.serviceModalTitle {
-			font-family: $headlineFont;
-		}
-		p.serviceModalText {
-			font-family: $bodyFont;
-		}
-		&:after {
-			content: "";
-			display: block;
-			width: 16rem;
-			height: 18rem;
-			border: 3px solid $darkGrey;
-			position: absolute;
-			top: 0.6rem;
-			right: 0.6rem;
-		}
+		left: 0.6rem;
+		z-index: -100;
 	}
 }
+
+
+div.servicesModal {
+	width: 16rem;
+	height: 18rem;
+	position: absolute;
+	top: 0;
+	padding: 1rem;
+	background-color: white;
+	clear: both;
+	display: none;
+	 &:after {
+		  display: block;
+		  content: "";
+	}
+	div.serviceModalClose {
+		float: right;
+		width: 1.4rem;
+		padding: 0.2rem;
+		}
+
+	div.serviceModalIcon {
+		width: 3rem;
+	}
+	h4.serviceModalTitle {
+		font-family: $headlineFont;
+	}
+	p.serviceModalText {
+		font-family: $bodyFont;
+	}
+	&:after {
+		content: "";
+		display: block;
+		width: 16rem;
+		height: 18rem;
+		border: 3px solid $darkGrey;
+		position: absolute;
+		top: 0.6rem;
+		right: 0.6rem;
+	}
+}
+
 
 div.portfolioPiece {
 	display: flex;
@@ -192,81 +192,81 @@ div.portfolioImageBox {
 
 }
 
-div#workflow {
-	div.workflow {
+
+div.workflow {
+	div.workflowSection {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin: 0 auto;	
+		div.workflowSectionText {
+			width: 34%;
+			// display: flex;
+			// flex-direction: column;
+			// justify-content: center;
+			div.workflowIconBox {
+				width: 3rem;
+			}
+			p.workflowTitle {
+				font-family: $headlineFont;
+				font-size: 1.8rem;
+			}
+			p.workflowDescription {
+				font-family: $bodyFont;
+				font-size: 1.4rem;
+			}
+		}
+		div.workflowSectionImage {
+			display: block;
+			padding: 2rem 6rem;
+		}
+	}		
+	div.connectorLine {
+		width: 28rem;
+		margin: 0 auto;
+	}
+	&:nth-of-type(odd) {
 		div.workflowSection {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			margin: 0 auto;	
 			div.workflowSectionText {
-				width: 34%;
-				// display: flex;
-				// flex-direction: column;
-				// justify-content: center;
+				text-align: right;
 				div.workflowIconBox {
-					width: 3rem;
+					display: block;
+					float: right;
+					&::after {
+					  display: block;
+					  content: "";
+					  clear: both;
+					}
 				}
 				p.workflowTitle {
-					font-family: $headlineFont;
-					font-size: 1.8rem;
-				}
-				p.workflowDescription {
-					font-family: $bodyFont;
-					font-size: 1.4rem;
+					&::before {
+					  display: block;
+					  content: "";
+					  clear: both;
+					}
 				}
 			}
-			div.workflowSectionImage {
+			&:after {
+				content: "";
 				display: block;
-				padding: 2rem 6rem;
-			}
-		}		
-		div.connectorLine {
-			width: 28rem;
-			margin: 0 auto;
-		}
-		&:nth-of-type(odd) {
-			div.workflowSection {
-				div.workflowSectionText {
-					text-align: right;
-					div.workflowIconBox {
-						display: block;
-						float: right;
-						&::after {
-						  display: block;
-						  content: "";
-						  clear: both;
-						}
-					}
-					p.workflowTitle {
-						&::before {
-						  display: block;
-						  content: "";
-						  clear: both;
-						}
-					}
-				}
-				&:after {
-					content: "";
-					display: block;
-				}
-			}
-		}
-		&:nth-of-type(even) {
-			div.connectorLine {
-				transform: rotateY(180deg);
-			}
-			div.workflowSection {
-			flex-direction: row-reverse;
-			}
-		}
-		&:last-of-type {
-			div.connectorLine {
-				display: none;
 			}
 		}
 	}
+	&:nth-of-type(even) {
+		div.connectorLine {
+			transform: rotateY(180deg);
+		}
+		div.workflowSection {
+		flex-direction: row-reverse;
+		}
+	}
+	&:last-of-type {
+		div.connectorLine {
+			display: none;
+		}
+	}
 }
+
 
 
 
