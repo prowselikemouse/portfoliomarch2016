@@ -1,47 +1,33 @@
-@media (max-width:770px) {
-	div.container {
-		top: -9.4rem;
-		div.content {
-			h3.sectionTitle {
-				margin-bottom: 6rem;
-			}
-		}
+@media (max-width: 1040px) {
+	div.logoBox {
+		bottom: -6.5rem;
 	}
-	div.headerContainer {
-		margin-top: 10rem;
-	}
-	div.logoNavBox {
-		div.logoBox {
-			width: 12rem;
-			left: 2rem;
-			bottom: -5.6rem;
-		}
-		nav ul.menu {
-			padding: 0.8rem 1.6rem;
-		}
-		div.navRuler {
-			width: 100%;
-			height: 4rem;
-		}
-	}
+}
 
-	div.headerBox {
-		top:-5rem;
-		}
+@media (max-width: 1000px) {
+	div.logoBox {
+		bottom: -5.5rem;
+	}
 	div.aboutBox {
-		width: 30rem;
-		top: 32rem;
-		div.aboutContentBox {
-			padding: 2rem 2.6rem 4rem 4rem;
-			h3.myName {
-				margin-top: 5rem;
-			}
-		}
+		top: 44rem; 
 	}
+}
 
-
-	div.serviceIconBox {
-		width: 10rem;
+@media (max-width: 850px) {
+	div.container {
+		top: -10rem;
+	}
+	div.headerBox {
+		top: -5rem;
+	}
+	div.logoBox {
+		top: -5rem;
+		left: 0;
+		margin: 0 auto;
+	}
+	div.aboutBox {
+		top: 30rem;
+		width: 30rem;
 	}
 
 	div.portfolioPiece {
@@ -72,154 +58,109 @@
 		}
 
 	}
-
-	div.workflow {
-		div.workflowSection {
-			div.workflowSectionText {
-				width: 28%;
-			}
-			div.workflowSectionImage {
-				padding: 3rem;
-			}
-		}
-			div.connectorLine {
-				width: 23rem;
-				margin-bottom: 1rem;
-			}
+	div.contactSectionInformation {
+		flex-direction: column;
 	}
+	p.contactBlurb {
+		width: 100%;
+		margin-bottom: 2rem;
+	}
+}
 
-	footer {
-		.container {
-			width: 90%;
-			div.content {
-				div.contactSectionInformation {
-					flex-direction: column;
-					p.contactBlurb {
-							width: 100%;
-							margin-bottom: 2rem;
-						}
-					div.contactInformationBox {
-						margin-left: 0;
+@media (max-width:767px) {
+div.container {
+	top: -9.4rem;
+	div.content {
+		h3.sectionTitle {
+			margin-bottom: 6rem;
+		}
+	}
+}
+div.headerContainer {
+	margin-top: 10rem;
+}
+
+	div.logoBox {
+		width: 12rem;
+		left: 0;
+		top: -3.8rem;
+		margin: 0 auto;
+
+	nav ul.menu {
+		padding: 0.8rem 1.6rem;
+	}
+	div.navRuler {
+		width: 100%;
+		height: 4rem;
+	}
+}
+
+div.headerBox {
+	top:-5rem;
+	}
+div.aboutBox {
+	width: 30rem;
+	top: 32rem;
+	div.aboutContentBox {
+		padding: 2rem 2.6rem 4rem 4rem;
+		h3.myName {
+			margin-top: 5rem;
+		}
+	}
+}
+
+
+
+
+div.workflow {
+	div.workflowSection {
+		div.workflowSectionText {
+			width: 28%;
+		}
+		div.workflowSectionImage {
+			padding: 3rem;
+		}
+	}
+		div.connectorLine {
+			width: 23rem;
+			margin-bottom: 1rem;
+		}
+}
+
+footer {
+	.container {
+		width: 90%;
+		div.content {
+			div.contactSectionInformation {
+				flex-direction: column;
+				p.contactBlurb {
+						width: 100%;
+						margin-bottom: 2rem;
 					}
+				div.contactInformationBox {
+					margin-left: 0;
 				}
 			}
 		}
 	}
 }
-
-@media (max-width:480px) {
-
-	// hamburger
-	div#menu-toggle {
-	display: inline-block;
-	span {
-	  display:block;
-		background-color: $darkGrey;
-	}
-	}
-	#menu-toggle {
-	  width:48px;
-	  height:44px;
-	  position:fixed;
-	  right: 2rem;
-	  top: 0;
-	  cursor:pointer;
-	  // border: 2px solid $darkGrey;
-	  background-color: white;
-	  }
-		    padding: 0 2px;
-	  #hamburger {
-	    position:absolute;
-	    height:100%;
-	    width:100%;
-		    margin: 0 auto;
-	    span {
-	     	width:26px;
-		    height:2px;
-		    position:relative;
-		    top:50%;
-		    left:50%;
-		    margin:8px 0;
-		    transform: translate(-50%, -50%);
-	      	&:nth-child(1){
-		        transition-delay:.5s;
-	      	}
-	      	&:nth-child(2){
-		        transition-delay:.625s;
-	      	}
-	      	&:nth-child(3){
-		        transition-delay:.75s;
-	      	}
-	    }
-	  }
-  #cross {
-    position:absolute;
-    height:100%;
-    width:100%;
-    transform:rotate(45deg);
-    span{
-      &:nth-child(1){
-        height:0%;
-        width:4px;
-        position:absolute;
-        top:10%;
-        left:48px;
-        transition-delay:0s;
-      }
-      &:nth-child(2){
-        width:0%;
-        height:4px;
-        position:absolute;
-        left:10%;
-        top:48px;
-        transition-delay:.25s;
-      }
-    }
-  }
-#menu-toggle.open {
-  #hamburger {
-    span {
-      width:0%;
-      &:nth-child(1){
-        transition-delay:0s;
-      }
-      &:nth-child(2){
-        transition-delay:.125s;
-      }
-      &:nth-child(3){
-        transition-delay:.25s;
-      }
-    }
-  }
-  #cross {
-    span {
-      &:nth-child(1){
-        height:80%;
-        transition-delay:.625s;
-      }
-    }
-    span {
-      &:nth-child(2){
-        width:80%;
-        transition-delay:.375s;
-      }
-    }    
-  }
 }
-	// hamburger end
 
-
+@media (max-width:700px) {
+	div.container {
+		top: -3.4rem;
+	}
 	ul.menu {
 		// visibility: hidden;
 		width: 100%;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		padding-top: 1rem;
 		padding-bottom: 1rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
-		// background-color: rgba(255,255,255,0.7);
+		background-color: rgba(255,255,255,0.85);
 		border: none;
 		border-bottom: 3px solid $darkGrey;
 		display: flex;
@@ -231,6 +172,165 @@
 			}
 		}
 	}
+	div.navRuler {
+		display: none;
+	}
+	div.aboutBox {
+	position: relative;
+	margin: 0 auto;
+	top: 0;
+	left: 0rem;
+	width: 100%;
+	margin-bottom: 8rem;
+	background-color: rgba(255,255,255,0);
+	border: 3px solid $darkGrey;
+		&:before {
+			display: none;
+		}
+		div.aboutContentBox {
+			padding: 2rem 4rem;
+		}
+	}
+	div.allServicesBox {
+		justify-content: space-around;
+	}
+	div.serviceListBox {
+		width: 50%;
+		max-width: 15rem;
+		margin-bottom: 3rem;
+	}
+}
+@media (max-width: 667px) {
+	div.allServicesBox {
+		flex-flow: row wrap;
+	}
+	.sectionTitle,
+	.serviceSectionTitle {
+		font-family: $headlineFont;
+		font-size: 2.4rem;
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+	.serviceSectionTitle {
+		margin-bottom: 6rem;
+	}
+	div.workflow {
+		&:after {
+			margin-top: 2rem;
+			content: "";
+			background-color: $darkGrey;
+			width: 3px;
+			height: 6rem;
+		}
+		div.workflowSection {
+			div.workflowSectionText {
+				width: 100%;
+				text-align: center;
+				margin: 0 auto;
+			}
+			div.workflowSectionImage {
+				padding: 0rem;
+				width: 37%;
+				margin: 0 auto;
+			}
+		}
+		div.connectorLine {
+			display: none;
+		}
+	}
+	div.workflow:nth-of-type(even),
+	div.workflow:nth-of-type(odd) {
+		div.workflowSection {
+			flex-direction: column-reverse;
+			margin: 1rem 0;
+			div.workflowSectionImage {
+				padding: 0;
+			}
+			div.workflowSectionText {
+				text-align: center;
+				margin-bottom: 3rem;
+				&:after {
+					content: "";
+					display: block;
+					height: 2px;
+					width: 7rem;
+					background-color: $darkGrey;
+					margin: 0 auto;
+				}
+				div.workflowIconBox {
+					display: none;
+				}
+			}
+		}
+	}
+	div.portfolioPiece:nth-of-type(odd),
+	div.portfolioPiece:nth-of-type(even) {
+		text-align: center;
+		div.portfolioPieceText {
+			margin-top: 2rem;
+			div.pieceViewLiveButton {
+				margin: 0 auto;
+				text-align: center;
+				float: none;
+				display: inline-block;
+			}
+		}
+		div.portfolioImageBox {
+			width: 100%;
+			margin: 0 auto;
+			
+		}
+	}
+	.portfolioImageScreen  {
+		width: 100%;
+	}
+	div.portfolioPiece {
+		&:nth-of-type(even) {
+			img.portfolioImage {
+				width: 100%;
+				left: 0;
+			}
+		}
+		&:nth-of-type(odd) {
+			img.portfolioImage {
+				width: 100%;
+				left: 0;
+			}
+		}
+	}
+
+}
+
+@media (max-width:575px) {
+	div.serviceListBox {
+		max-width: 13rem;
+	}
+}
+
+@media (max-width:480px) {
+
+	// ul.menu {
+	// 	// visibility: hidden;
+	// 	width: 100%;
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	padding-top: 1rem;
+	// 	padding-bottom: 1rem;
+	// 	padding-left: 2rem;
+	// 	padding-right: 2rem;
+	// 	// background-color: rgba(255,255,255,0.7);
+	// 	border: none;
+	// 	border-bottom: 3px solid $darkGrey;
+	// 	display: flex;
+	// 	flex-direction: row;
+	// 	justify-content: space-between;
+	// 	li {
+	// 		a {
+	// 			padding: 0;
+	// 		}
+	// 	}
+	// }
 	header {
 		div.headerContainer {
 			div.logoBox {
@@ -250,94 +350,14 @@
 		}
 	}
 
-div.aboutBox {
-	position: relative;
-	top: 0;
-	left: -5rem;
-	width: 41rem;
-	margin-bottom: 8rem;
-	background-color: rgba(255,255,255,0);
-	border: 3px solid $darkGrey;
-	&:before {
-		display: none;
+	div.allServicesBox {
+		flex-flow: column nowrap;
+		align-items:center;
 	}
-	div.aboutContentBox {
-		padding: 3rem 5rem;
+	div.serviceListBox {
+		max-width: 18rem;
 	}
-}
-
-div.allServicesBox {
-	flex-flow: row wrap;
-	padding: 0 2rem;
-}
-
-
-	div.workflow {
-		div.workflowSection {
-			div.workflowSectionText {
-				width: 50%;
-			}
-			div.workflowSectionImage {
-				padding: 0;
-				padding-left: 2rem;
-			}
-		}
-		div.connectorLine {
-			width: 30rem;
-		}
-		&:nth-of-type(even) {
-			div.workflowSection {
-				div.workflowSectionText {
-					text-align: right;
-					&:after {
-						content:"";
-						display: block;
-						clear: both;
-					}
-					div.workflowIconBox {
-						float: right;
-					}
-					div.workflowTitle {
-						&:before {
-							content:"";
-							display: block;
-							clear: both;
-						}
-					}
-				}
-				div.workflowSectionImage {
-					padding-left: 0;
-					padding-right: 2rem;
-				}
-			}
-		}
-		&:nth-of-type(odd) {
-			div.workflowSection {
-				div.workflowSectionText {
-					text-align: left;
-						&:after {
-							content:"";
-							display: block;
-							clear: both;
-						}
-					div.workflowIconBox {
-						float: left;
-					}
-					div.workflowTitle {
-						&:before {
-							content:"";
-							display: block;
-							clear: both;
-						}
-					}
-				}
-				div.workflowSectionImage {
-					padding-right: 0;
-					padding-left: 2rem;
-				}
-			}
-		}
-	}
+	
 
 	footer {
 		div.section {
@@ -376,6 +396,84 @@ div.allServicesBox {
 	}
 }
 
+@media (max-width:410px) {
+// hamburger
+
+	ul.menu {
+		display: none;
+	}
+	ul.visibleNav {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: fixed;
+		top: 4rem;
+		z-index: 10;
+	}
+	.menuContainer {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		height:44px;
+	  	background-color: white;
+	}
+	div#menu-toggle {
+	display: inline-block;
+		span {
+		  	display:block;
+			background-color: $darkGrey;
+			}
+	}
+	#menu-toggle {
+	  width:100%;
+
+	  position:relative;
+	  cursor:pointer;
+
+	  }
+		    padding: 0 2px;
+	  #hamburger {
+	    height:100%;
+	    width:100%;
+		margin: 0 auto;
+	    span {
+	     	width:26px;
+		    height:2px;
+		    position:relative;
+		    top:50%;
+		    left:50%;
+		    margin:8px 0;
+		    transform: translate(-50%, -50%);
+	      	&:nth-child(1){
+		        transition-delay:.5s;
+	      	}
+	      	&:nth-child(2){
+		        transition-delay:.625s;
+	      	}
+	      	&:nth-child(3){
+		        transition-delay:.75s;
+	      	}
+	    }
+	  }
+#menu-toggle.open {
+  #hamburger {
+    span {
+      width:0%;
+      &:nth-child(1){
+        transition-delay:0s;
+      }
+      &:nth-child(2){
+        transition-delay:.125s;
+      }
+      &:nth-child(3){
+        transition-delay:.25s;
+      }
+    }
+  }
+}
+	// hamburger end
+
+}
 
 @media (max-width:320px) {
 	div.main {
@@ -484,16 +582,14 @@ div.allServicesBox {
 	}
 
 	footer {
-		div#contact {
 			div.contactSectionInformation {
 				padding: 4rem 2rem;
-				div.contactIcon {
-					display: none;
+				&:after {
+					left: -1.5rem;
 				}
 				p.contactInformationText {
 					text-align: left;
 				}
 			}
-		}
 	}
 }

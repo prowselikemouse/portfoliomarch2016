@@ -6,17 +6,20 @@
 			<div class="contactSectionInformation">
 				<p class="contactBlurb"><?php the_field('contact_section_blurb'); ?></p>
 				<div class="contactInformationBox">
-					<?php while(has_sub_field('contact_method')): ?>
-						<a href="<?php the_sub_field('contact_method_link'); ?>?Subject=Let's%20Work!" target="blank">
 							<div class="contactInformation">
-								<?php $image = get_sub_field('contact_method_icon'); ?>
+								<?php $image = get_field('email_icon'); ?>
 								<div class="contactIcon">
 									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
 								</div>
-								<p class="contactInformationText"><?php the_sub_field('contact_method_info'); ?></p>
+								<p class="contactInformationText"><?php the_field('email_address'); ?></p>
 							</div>
-						</a>
-					<?php endwhile; ?>
+							<div class="contactInformation">
+								<?php $image = get_field('phone_icon'); ?>
+								<div class="contactIcon">
+									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
+								</div>
+								<p class="contactInformationText"><?php the_field('phone_number'); ?></p>
+							</div>
 				</div>
 			</div>
 		</div> <!-- end content -->

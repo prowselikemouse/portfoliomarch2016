@@ -34,6 +34,7 @@ div.contactSectionInformation {
 		top: 1rem;
 		left: 1rem;
 	}
+}
 	p.contactBlurb {
 		margin: 0;
 		width: 50%;
@@ -41,9 +42,14 @@ div.contactSectionInformation {
 	div.contactInformationBox {
 		flex-direction: column;
 		margin-left: 2rem;
+		a {
+			color: $darkGrey;
+		}
+	}
 		div.contactInformation {
 			display: flex;
 			flex-direction: row;
+		}
 			div.contactIcon {
 				width: 2rem;
 				margin-right: 1.4rem;
@@ -51,9 +57,6 @@ div.contactSectionInformation {
 			p.contactInformationText {
 				margin: 0;
 			}
-		}
-	}
-}
 
 div.footerContent {
 	display: flex;

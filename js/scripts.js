@@ -15,5 +15,8 @@ $(function(){
       });
     });
 
+  $('#menu-toggle').click(function(){
+  $('ul.menu').toggleClass('visibleNav');
+})
 
 });

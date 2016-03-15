@@ -8,7 +8,6 @@ div.headerBox {
 	top: -8rem;
 	img {
 		z-index: -400;
-		transform: rotateY(180deg);
 	}
 }
 
@@ -50,7 +49,7 @@ div.aboutContentBox {
 }
 
 
-h3.serviceSectionTitle {
+.serviceSectionTitle {
 	margin-bottom: 6rem;
 	font-family: $headlineFont;
 	font-size: 2.4rem;
@@ -58,11 +57,15 @@ h3.serviceSectionTitle {
 
 div.allServicesBox {
 	display: flex;
-	flex-direction: row;
+	flex-flow: row wrap;
 	justify-content: space-between;
 	position: relative;
 }
 
+div.serviceListBox {
+	width: 20%;
+	max-width: 12rem;
+}
 div.individualService {
 	h4.serviceTitle {
 		text-align: center;
@@ -74,7 +77,7 @@ div.individualService {
 
 div.serviceIconBox {
 	margin: 0 auto;
-	width: 12rem;
+	width: 100%;
 	position: relative;
 	&:before {
 		content:" ";
@@ -141,8 +144,14 @@ div.portfolioPiece {
 	&:nth-of-type(even) {
 		flex-direction: row-reverse;
 		text-align: left;
+		img.portfolioImage {
+			left: 0;
+		}
 	}
 	&:nth-of-type(odd) {
+		img.portfolioImage {
+			right: 0;
+		}
 		div.pieceViewLiveButton {
 			float: right;			
 		}
@@ -154,10 +163,13 @@ div.portfolioPieceText {
 	font-family: $bodyFont;
 	h4.pieceType {
 		font-family: $headlineFont;
-		font-size: 1.8rem;
+		font-size: 2rem;
+		margin-top: 0.6rem;
 	}
 	div.pieceTitle {
 		font-size: 1.8rem;
+		margin-top: 1rem;
+		padding: 0;
 	}
 	p.pieceBuiltWith,
 	div.pieceDescription {
@@ -179,18 +191,17 @@ div.portfolioPieceText {
 
 div.portfolioImageBox {
 	position: relative;
+	width: 60%;
+}
 	img.portfolioImage {
 		position: absolute;
-		width: 100%;
+		width: 90%;
 		top: 0;
-		left: 0;
 		z-index: -1;
 	}
 	.portfolioImageScreen {
-		width: 100%;
+		width: 90%;
 	}
-
-}
 
 
 div.workflow {
