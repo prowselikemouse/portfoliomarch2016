@@ -23,7 +23,7 @@ div.aboutBox {
 	left: -3rem;
 }
 
-div.aboutBox:before {
+.aboutBox:before {
 	content: "";
 	display: block;
 	width: 100%;
@@ -34,7 +34,7 @@ div.aboutBox:before {
 	top: -2rem;
 }
 
-div.aboutContentBox {
+.aboutContentBox {
 	padding: 3rem 3rem 5rem 6rem;
 	h3.myName {
 		font-family: $headlineFont;
@@ -55,18 +55,18 @@ div.aboutContentBox {
 	font-size: 2.4rem;
 }
 
-div.allServicesBox {
+.allServicesBox {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
 	position: relative;
 }
 
-div.serviceListBox {
+.serviceListBox {
 	width: 20%;
 	max-width: 12rem;
 }
-div.individualService {
+.individualService {
 	h4.serviceTitle {
 		text-align: center;
 		font-family: $bodyFont;
@@ -75,11 +75,11 @@ div.individualService {
 
 }
 
-div.serviceIconBox {
+.serviceIconBox {
 	margin: 0 auto;
 	width: 100%;
 	position: relative;
-	&:before {
+	&::before {
 		content:" ";
 		display: inline-block;
 		width: 100%;
@@ -90,7 +90,31 @@ div.serviceIconBox {
 		left: 0.6rem;
 		z-index: -100;
 	}
+	&::after {
+		content:" ";
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient($cream, $lightPink) ;
+		border-radius: 50%;
+		position: absolute;
+		left: 0.6rem;
+		z-index: -50;
+		top: 0;
+		opacity: 0;
+		transition: all 1.0s;
+	}
 }
+// .serviceIconBox:hover {
+// 	&::after {
+// 		opacity: 1;
+// 	}
+// }
+
+// .serviceListBox:hover {
+// 	// opacity: 1;
+// 	display: none;
+// }
 
 
 div.servicesModal {
