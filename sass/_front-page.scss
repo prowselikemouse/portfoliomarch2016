@@ -1,26 +1,26 @@
-div.headerBox {
-	width: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	margin: 0 auto;
-	position: relative;
-	top: -8rem;
+.headerBox {
+	// width: 100%;
+	// background-repeat: no-repeat;
+	// background-size: cover;
+	// background-position: center;
+	// margin: 0 auto;
+	// position: relative;
+	// margin-top: -8rem;
 	img {
-		z-index: -400;
+		margin-top: -8rem;
 	}
 }
 
-div#about {
+#about {
 	display: block;
 }
 
-div.aboutBox {
+.aboutBox {
 	background-color: white;
 	width: 36rem;
 	position: absolute;
-	top: 56rem;
-	left: -3rem;
+	top: 70rem;
+	left: 11rem;
 }
 
 .aboutBox:before {
@@ -59,7 +59,6 @@ div.aboutBox {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	position: relative;
 }
 
 .serviceListBox {
@@ -79,6 +78,7 @@ div.aboutBox {
 	margin: 0 auto;
 	width: 100%;
 	position: relative;
+	z-index: 1;
 	&::before {
 		content:" ";
 		display: inline-block;
@@ -88,7 +88,7 @@ div.aboutBox {
 		border-radius: 50%;
 		position: absolute;
 		left: 0.6rem;
-		z-index: -100;
+		z-index: -1;
 	}
 	&::after {
 		content:" ";
@@ -99,17 +99,17 @@ div.aboutBox {
 		border-radius: 50%;
 		position: absolute;
 		left: 0.6rem;
-		z-index: -50;
+		z-index: -1;
 		top: 0;
 		opacity: 0;
 		transition: all 1.0s;
 	}
 }
-// .serviceIconBox:hover {
-// 	&::after {
-// 		opacity: 1;
-// 	}
-// }
+.serviceIconBox:hover {
+	&::after {
+		opacity: 1;
+	}
+}
 
 // .serviceListBox:hover {
 // 	// opacity: 1;
@@ -221,10 +221,11 @@ div.portfolioImageBox {
 		position: absolute;
 		width: 90%;
 		top: 0;
-		z-index: -1;
+		opacity: 99;
 	}
 	.portfolioImageScreen {
 		width: 90%;
+		position: relative;
 	}
 
 
