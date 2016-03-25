@@ -29,6 +29,9 @@ $(document).ready(function(){
         // $(this).parent().parent().next('servicesModal').fadeOut();
 
     });
+    !$(".servicesModal").click(function(){
+        $('.servicesModal').fadeOut('medium');
+    });
     $(".serviceModalClose").click(function(){
         $(".servicesModal").fadeOut('medium');
     });
