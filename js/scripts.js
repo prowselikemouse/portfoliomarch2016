@@ -19,4 +19,17 @@ $(function(){
   $('ul.menu').toggleClass('visibleNav');
 })
 
+
+}); // end document ready
+
+$(document).ready(function(){
+    $(".serviceIconBox").click(function(){
+        $(".servicesModal").fadeOut('medium');
+        $(this).parent().next().fadeIn('medium');
+        // $(this).parent().parent().next('servicesModal').fadeOut();
+
+    });
+    $(".serviceModalClose").click(function(){
+        $(".servicesModal").fadeOut('medium');
+    });
 });

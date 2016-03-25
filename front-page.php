@@ -32,16 +32,18 @@
 								<div class= "serviceIconBox"><img src="<?php echo $image['sizes']['thumbnail']; ?>" alt=""></div>
 								<h4 class="serviceTitle"><?php the_sub_field('service_title'); ?></h4>
 							</div>
-							<div class="servicesModal">
-								<?php $image = get_sub_field('service_modal_icon') ?>
+							<div class="servicesModal" data-backdrop="true">
+								<div class="servicesModalContent">
+									<?php $image = get_sub_field('service_modal_icon') ?>
+									<div class="serviceModalIcon">
+										<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
+									</div>
+									<h4 class="serviceModalTitle"><?php the_sub_field('service_modal_title'); ?></h4>
+									<p class="serviceModalText"><?php the_sub_field('service_modal_text'); ?></p>
+								</div>
 								<div class="serviceModalClose">
 									<img src="<?php bloginfo('template_directory'); ?>/images/close_x.svg" alt=""/>
 								</div>
-								<div class="serviceModalIcon">
-									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
-								</div>
-								<h4 class="serviceModalTitle"><?php the_sub_field('service_modal_title'); ?></h4>
-								<p class="serviceModalText"><?php the_sub_field('service_modal_text'); ?></p>
 							</div>
 						</div>
 				<?php endwhile; ?>

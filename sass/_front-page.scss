@@ -59,6 +59,7 @@
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
+	position: relative;
 }
 
 .serviceListBox {
@@ -106,59 +107,66 @@
 	}
 }
 .serviceIconBox:hover {
+	cursor: pointer;
 	&::after {
 		opacity: 1;
 	}
 }
 
-// .serviceListBox:hover {
-// 	// opacity: 1;
-// 	display: none;
-// }
-
-
-div.servicesModal {
-	width: 16rem;
-	height: 18rem;
+.servicesModal {
+	width: 24rem;
 	position: absolute;
-	top: 0;
-	padding: 1rem;
+	top: -4rem;
+	padding: 2rem 3rem 2rem 2rem;
 	background-color: white;
 	clear: both;
+	z-index: 5;
 	display: none;
-	 &:after {
-		  display: block;
-		  content: "";
-	}
-	div.serviceModalClose {
-		float: right;
-		width: 1.4rem;
-		padding: 0.2rem;
-		}
-
-	div.serviceModalIcon {
-		width: 3rem;
-	}
-	h4.serviceModalTitle {
-		font-family: $headlineFont;
-	}
-	p.serviceModalText {
-		font-family: $bodyFont;
-	}
 	&:after {
 		content: "";
-		display: block;
-		width: 16rem;
-		height: 18rem;
-		border: 3px solid $darkGrey;
+	// border: 2px solid $darkGrey;
+		display: inline;
+		width: 100%;
+		height: 100%;
+		border: 2px solid $darkGrey;
 		position: absolute;
-		top: 0.6rem;
-		right: 0.6rem;
+		top: 1.4rem;
+		right: 1.4rem;
+	}
+}
+	
+.serviceModalClose {
+	float: right;
+	width: 1.8rem;
+	position: absolute;
+	right: 2.6rem;
+	top: 2.6rem;
+	z-index: 1;
+	img:hover {
+		cursor: pointer;
+
 	}
 }
 
+	div.serviceModalIcon {
+		width: 4rem;
+		padding-top: 4rem;
+	}
+	h4.serviceModalTitle {
+		font-family: $headlineFont;
+		font-size: 1.6rem;
+		margin-bottom: 1rem;
+	}
+	p.serviceModalText {
+		font-family: $bodyFont;
+		font-size: 1.2rem;
+		padding-right: 1rem;
+		margin: 0;
+	}
+	
 
-div.portfolioPiece {
+
+.portfolioPiece {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -182,7 +190,7 @@ div.portfolioPiece {
 	}
 }
 
-div.portfolioPieceText {
+.portfolioPieceText {
 	width: 40%;
 	font-family: $bodyFont;
 	h4.pieceType {
@@ -213,20 +221,20 @@ div.portfolioPieceText {
 	}
 }
 
-div.portfolioImageBox {
+.portfolioImageBox {
 	position: relative;
 	width: 60%;
 }
-	img.portfolioImage {
-		position: absolute;
-		width: 90%;
-		top: 0;
-		opacity: 99;
-	}
-	.portfolioImageScreen {
-		width: 90%;
-		position: relative;
-	}
+.portfolioImage {
+	position: absolute;
+	width: 90%;
+	top: 0;
+}
+.portfolioImageScreen {
+	width: 90%;
+	position: relative;
+	z-index: 1;
+}
 
 
 div.workflow {
