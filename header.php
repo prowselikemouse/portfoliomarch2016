@@ -36,8 +36,9 @@
           <nav><?php wp_nav_menu( array(
               'container' => false,
               'theme_location' => 'primary'
-            )); ?></nav>
+            )); ?>
           <div class="navRuler"></div>
+          </nav>
       </div>
 
 

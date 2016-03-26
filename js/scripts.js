@@ -26,11 +26,6 @@ $(document).ready(function(){
     $(".serviceIconBox").click(function(){
         $(".servicesModal").fadeOut('medium');
         $(this).parent().next().fadeIn('medium');
-        // $(this).parent().parent().next('servicesModal').fadeOut();
-
-    });
-    !$(".servicesModal").click(function(){
-        $('.servicesModal').fadeOut('medium');
     });
     $(".serviceModalClose").click(function(){
         $(".servicesModal").fadeOut('medium');
