@@ -88,6 +88,8 @@
 						<div class="workflowIconBox">
 							<img class="workflowIcon" src="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
 						</div> <!-- end workflowIconBox -->
+						<p class="workflowTitle"><?php the_sub_field('experience_job_title'); ?></p>
+						<p class="workflowTitle"><?php the_sub_field('experience_job_duration'); ?></p>
 						<p class="workflowTitle"><?php the_sub_field('workflow_section_title'); ?></p>
 						<p class="workflowDescription"><?php the_sub_field('workflow_section_description'); ?></p>
 					</div> <!-- end workflowSectionText -->
