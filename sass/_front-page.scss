@@ -17,10 +17,10 @@
 
 .aboutBox {
 	background-color: white;
-	width: 36rem;
+	width: 38rem;
 	position: absolute;
-	top: 70rem;
-	left: 11rem;
+	top: 64rem;
+	left: -8rem;
 }
 
 .aboutBox:before {
@@ -65,6 +65,7 @@
 .serviceListBox {
 	width: 20%;
 	max-width: 12rem;
+	position: relative;
 }
 .individualService {
 	h4.serviceTitle {
